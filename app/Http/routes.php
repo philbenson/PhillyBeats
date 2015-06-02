@@ -20,7 +20,7 @@ Route::controllers([
 	'password' => 'Auth\PasswordController',
 ]);
 
-Route::resource('affiliate', 'AffiliateController');
+Route::resource('affiliation', 'AffiliationController');
 
 Route::resource('artist', 'ArtistController');
 

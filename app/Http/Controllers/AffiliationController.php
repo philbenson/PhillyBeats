@@ -5,7 +5,9 @@ use App\Http\Controllers\Controller;
 
 use Illuminate\Http\Request;
 
-class AffiliateController extends Controller {
+use App\Affiliation;
+
+class AffiliationController extends Controller {
 
 	/**
 	 * Display a listing of the resource.
@@ -14,7 +16,9 @@ class AffiliateController extends Controller {
 	 */
 	public function index()
 	{
-		//
+		$affiliations = Affiliation::all();
+
+		return $affiliations;
 	}
 
 	/**
@@ -24,7 +28,7 @@ class AffiliateController extends Controller {
 	 */
 	public function create()
 	{
-		//
+		return view('affiliation.create');
 	}
 
 	/**
@@ -32,9 +36,13 @@ class AffiliateController extends Controller {
 	 *
 	 * @return Response
 	 */
-	public function store()
+	public function store(Request $request)
 	{
-		//
+		$affiliation = new Affiliation;
+
+		$affiliation = $request->all();
+
+		$affiliation->save();
 	}
 
 	/**
@@ -43,9 +51,9 @@ class AffiliateController extends Controller {
 	 * @param  int  $id
 	 * @return Response
 	 */
-	public function show($id)
+	public function show(Affiliation $affiliation)
 	{
-		//
+		return view('affiliation.show', compact('affiliation'));
 	}
 
 	/**
