@@ -19,3 +19,13 @@ Route::controllers([
 	'auth' => 'Auth\AuthController',
 	'password' => 'Auth\PasswordController',
 ]);
+
+Route::resource('affiliate', 'AffiliateController');
+
+Route::resource('artist', 'ArtistController');
+
+Route::resource('event', 'EventController');
+
+Route::resource('genre', 'GenreController');
+
+Route::resource('venue', 'VenueController');
