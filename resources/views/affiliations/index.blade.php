@@ -5,8 +5,8 @@
         <div class="container">
             <div class="row">
                 <div class="col-xs-12">
-                    <p>ID: {{ $affiliation->id }}<br>
-                    Name: {{ $affiliation->name }}<br>
+                    <p><strong><a href="{{ route('affiliations.destroy', $affiliation) }}">{{ $affiliation->name }}</a></strong><br>
+                    ID: {{ $affiliation->id }}<br>
                     City: {{ $affiliation->city }}<br>
                     Website: {{ $affiliation->website }}</p>
                 </div>

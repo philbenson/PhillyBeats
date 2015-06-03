@@ -35,24 +35,11 @@ class AffiliationController extends Controller {
 	/**
 	 * Store a newly created resource in storage.
 	 *
+	 * @param Request $request
 	 * @return Response
 	 */
 	public function store(Request $request)
 	{
-		/*$affiliation = new Affiliation;
-
-		$affiliation->name = $request->name;
-		
-		$affiliation->city = $request->city;
-		
-		$affiliation->website = $request->website;
-
-		// $affiliation->user_id = Auth::user();
-
-		// $affiliation->added_by = Auth::user();
-
-		$affiliation->save();*/
-
 		Affiliation::create($request->all());
 
 		return redirect('affiliations');
@@ -61,7 +48,7 @@ class AffiliationController extends Controller {
 	/**
 	 * Display the specified resource.
 	 *
-	 * @param  int  $id
+	 * @param  Affiliation $affiliation
 	 * @return Response
 	 */
 	public function show(Affiliation $affiliation)
@@ -72,7 +59,7 @@ class AffiliationController extends Controller {
 	/**
 	 * Show the form for editing the specified resource.
 	 *
-	 * @param  int  $id
+	 * @param  Affiliation $affiliation
 	 * @return Response
 	 */
 	public function edit(Affiliation $affiliation)
@@ -83,14 +70,17 @@ class AffiliationController extends Controller {
 	/**
 	 * Update the specified resource in storage.
 	 *
-	 * @param  int  $id
+	 * @param  Affiliation $affiliation
+	 * @param  Request $request
 	 * @return Response
 	 */
-	public function update(Request $request)
+	public function update(Affiliation $affiliation, Request $request)
 	{
-		$affiliation = Affiliation::find($request->id);
-
-		$affiliation = $request->all();
+		$affiliation->name = $request->name;
+		
+		$affiliation->city = $request->city;
+		
+		$affiliation->website = $request->website;
 
 		$affiliation->save();
 
@@ -100,12 +90,14 @@ class AffiliationController extends Controller {
 	/**
 	 * Remove the specified resource from storage.
 	 *
-	 * @param  int  $id
+	 * @param  Affiliation $affiliation
 	 * @return Response
 	 */
-	public function destroy($id)
+	public function destroy(Affiliation $affiliation)
 	{
-		//
+		$affiliation->delete();
+
+		return redirect('affiliations');
 	}
 
 }

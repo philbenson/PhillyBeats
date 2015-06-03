@@ -24,6 +24,10 @@
                     {!! Form::submit('Submit', ['class' => 'form-control btn btn-primary']) !!}
 
                 {!! Form::close() !!}
+                <br>
+                {!! Form::open(['action' => ['AffiliationController@destroy', $affiliation], 'method' => 'delete']) !!}
+                    {!! Form::submit('Delete', ['class' => 'form-control btn btn-danger']) !!}
+                {!! Form::close() !!}
             </div>
         </div>
     </div>
