@@ -5,6 +5,7 @@ use App\Http\Controllers\Controller;
 
 use Illuminate\Http\Request;
 
+use Auth;
 use App\Affiliation;
 
 class AffiliationController extends Controller {
@@ -18,7 +19,7 @@ class AffiliationController extends Controller {
 	{
 		$affiliations = Affiliation::all();
 
-		return $affiliations;
+		return view('affiliations.index', compact('affiliations'));
 	}
 
 	/**
@@ -28,7 +29,7 @@ class AffiliationController extends Controller {
 	 */
 	public function create()
 	{
-		return view('affiliation.create');
+		return view('affiliations.create');
 	}
 
 	/**
@@ -38,11 +39,23 @@ class AffiliationController extends Controller {
 	 */
 	public function store(Request $request)
 	{
-		$affiliation = new Affiliation;
+		/*$affiliation = new Affiliation;
 
-		$affiliation = $request->all();
+		$affiliation->name = $request->name;
+		
+		$affiliation->city = $request->city;
+		
+		$affiliation->website = $request->website;
 
-		$affiliation->save();
+		// $affiliation->user_id = Auth::user();
+
+		// $affiliation->added_by = Auth::user();
+
+		$affiliation->save();*/
+
+		Affiliation::create($request->all());
+
+		return redirect('affiliations');
 	}
 
 	/**
@@ -53,7 +66,7 @@ class AffiliationController extends Controller {
 	 */
 	public function show(Affiliation $affiliation)
 	{
-		return view('affiliation.show', compact('affiliation'));
+		return view('affiliations.show', compact('affiliation'));
 	}
 
 	/**
@@ -62,9 +75,9 @@ class AffiliationController extends Controller {
 	 * @param  int  $id
 	 * @return Response
 	 */
-	public function edit($id)
+	public function edit(Affiliation $affiliation)
 	{
-		//
+		return view('affiliations.edit', compact('affiliation'));
 	}
 
 	/**
@@ -73,9 +86,15 @@ class AffiliationController extends Controller {
 	 * @param  int  $id
 	 * @return Response
 	 */
-	public function update($id)
+	public function update(Request $request)
 	{
-		//
+		$affiliation = Affiliation::find($request->id);
+
+		$affiliation = $request->all();
+
+		$affiliation->save();
+
+		return redirect('affiliations');
 	}
 
 	/**

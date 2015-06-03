@@ -7,7 +7,9 @@ class Affiliation extends Model {
 	protected $fillable = [
         'name',
         'city',
-        'website'
+        'website',
+        'user_id',
+        'added_by',
     ];
 
     public function artists()

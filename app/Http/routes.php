@@ -20,12 +20,12 @@ Route::controllers([
 	'password' => 'Auth\PasswordController',
 ]);
 
-Route::resource('affiliation', 'AffiliationController');
+Route::resource('affiliations', 'AffiliationController');
 
-Route::resource('artist', 'ArtistController');
+Route::resource('artists', 'ArtistController');
 
-Route::resource('event', 'EventController');
+Route::resource('events', 'EventController');
 
-Route::resource('genre', 'GenreController');
+Route::resource('genres', 'GenreController');
 
-Route::resource('venue', 'VenueController');
+Route::resource('venues', 'VenueController');
