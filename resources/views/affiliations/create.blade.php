@@ -4,7 +4,9 @@
     <div class="container">
         <div class="row">
             <div class="col-xs-12">
-                @include('affiliations.form')
+                {!! Form::open(['action' => 'AffiliationController@store']) !!}
+                    @include('affiliations.form', ['submitButtonText' => 'Submit'])
+                {!! Form::close() !!}
             </div>
         </div>
     </div>
