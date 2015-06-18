@@ -19,7 +19,8 @@ class AffiliationController extends Controller {
 	{
 		$affiliations = Affiliation::all();
 
-		return view('affiliations.index', compact('affiliations'));
+		// return view('affiliations.index', compact('affiliations'));
+		return $affiliations;
 	}
 
 	/**
