@@ -2,7 +2,7 @@
 
 use Illuminate\Database\Eloquent\Model;
 
-class Affiliation extends Model {
+class Promoter extends Model {
 
 	protected $fillable = [
         'name',

@@ -3,7 +3,7 @@
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateAffiliationArtistPivotTable extends Migration {
+class CreateArtistPromoterPivotTable extends Migration {
     
     /**
      * Run the migrations.
@@ -12,12 +12,12 @@ class CreateAffiliationArtistPivotTable extends Migration {
      */
     public function up()
     {
-        Schema::create('affiliation_artist', function(Blueprint $table)
+        Schema::create('artist_promoter', function(Blueprint $table)
         {
-            $table->integer('affiliation_id')->unsigned()->index();
-            $table->foreign('affiliation_id')->references('id')->on('affiliations')->onDelete('cascade');
             $table->integer('artist_id')->unsigned()->index();
             $table->foreign('artist_id')->references('id')->on('artists')->onDelete('cascade');
+            $table->integer('promoter_id')->unsigned()->index();
+            $table->foreign('promoter_id')->references('id')->on('promoters')->onDelete('cascade');
         });
     }
 
@@ -28,6 +28,6 @@ class CreateAffiliationArtistPivotTable extends Migration {
      */
     public function down()
     {
-        Schema::drop('affiliation_artist');
+        Schema::drop('artist_promoter');
     }
 }

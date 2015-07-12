@@ -11,9 +11,9 @@
 |
 */
 
-Route::get('/ng', function() {
-    return view('ng');
-});
+// Route::get('ng', function() {
+//     return view('ng');
+// });
 
 Route::get('/', 'WelcomeController@index');
 
@@ -24,12 +24,12 @@ Route::controllers([
 	'password' => 'Auth\PasswordController',
 ]);
 
-Route::resource('affiliations', 'AffiliationController');
-
 Route::resource('artists', 'ArtistController');
 
 Route::resource('events', 'EventController');
 
 Route::resource('genres', 'GenreController');
+
+Route::resource('promoters', 'PromoterController');
 
 Route::resource('venues', 'VenueController');

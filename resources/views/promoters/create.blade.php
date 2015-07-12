@@ -1,11 +1,11 @@
 @extends('app')
-@section('title', 'Create Affiliation')
+@section('title', 'Create Promoter')
 @section('content')
     <div class="container">
         <div class="row">
             <div class="col-xs-12">
-                {!! Form::open(['action' => 'AffiliationController@store']) !!}
-                    @include('affiliations.form', ['submitButtonText' => 'Submit'])
+                {!! Form::open(['action' => 'PromoterController@store']) !!}
+                    @include('promoters.form', ['submitButtonText' => 'Submit'])
                 {!! Form::close() !!}
             </div>
         </div>

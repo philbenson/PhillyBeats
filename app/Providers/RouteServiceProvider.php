@@ -26,13 +26,13 @@ class RouteServiceProvider extends ServiceProvider {
 		
 		parent::boot($router);
 
-		$router->model('affiliations', 'App\Affiliation');
-
 		$router->model('artists', 'App\Artist');
 		
 		$router->model('events', 'App\Event');
 		
 		$router->model('genres', 'App\Genre');
+
+		$router->model('promoters', 'App\Promoter');
 		
 		$router->model('venues', 'App\Venue');
 	}

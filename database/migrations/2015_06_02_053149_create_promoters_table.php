@@ -3,7 +3,7 @@
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateAffiliationsTable extends Migration {
+class CreatePromotersTable extends Migration {
 
 	/**
 	 * Run the migrations.
@@ -12,7 +12,7 @@ class CreateAffiliationsTable extends Migration {
 	 */
 	public function up()
 	{
-		Schema::create('affiliations', function(Blueprint $table)
+		Schema::create('promoters', function(Blueprint $table)
 		{
 			$table->increments('id');
 			$table->string('name')->unique();
@@ -33,7 +33,7 @@ class CreateAffiliationsTable extends Migration {
 	 */
 	public function down()
 	{
-		Schema::drop('affiliations');
+		Schema::drop('promoters');
 	}
 
 }
