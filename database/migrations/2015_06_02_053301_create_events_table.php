@@ -26,8 +26,8 @@ class CreateEventsTable extends Migration {
 			$table->integer('price')->unsigned();
 			$table->string('website');
 			$table->string('facebook');
-			$table->integer('added_by')->unsigned();
-			$table->foreign('added_by')->references('id')->on('users');
+			// $table->integer('added_by')->unsigned();
+			// $table->foreign('added_by')->references('id')->on('users');
 			$table->timestamps();
 		});
 	}

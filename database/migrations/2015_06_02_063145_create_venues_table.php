@@ -21,8 +21,8 @@ class CreateVenuesTable extends Migration {
 			$table->string('facebook');
 			$table->string('twitter');
 			$table->string('instagram');
-			$table->integer('added_by')->unsigned();
-			$table->foreign('added_by')->references('id')->on('users');
+			// $table->integer('added_by')->unsigned();
+			// $table->foreign('added_by')->references('id')->on('users');
 			$table->timestamps();
 		});
 	}

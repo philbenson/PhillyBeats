@@ -23,10 +23,10 @@ class CreateArtistsTable extends Migration {
 			$table->string('bandcamp');
 			$table->string('facebook');
 			$table->string('twitter');
-			$table->integer('user_id')->unsigned();
-			$table->foreign('user_id')->references('id')->on('users');
-			$table->integer('added_by')->unsigned();
-			$table->foreign('added_by')->references('id')->on('users');
+			// $table->integer('user_id')->unsigned();
+			// $table->foreign('user_id')->references('id')->on('users');
+			// $table->integer('added_by')->unsigned();
+			// $table->foreign('added_by')->references('id')->on('users');
 			$table->timestamps();
 		});
 	}

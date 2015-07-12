@@ -16,8 +16,8 @@ class CreateGenresTable extends Migration {
 		{
 			$table->increments('id');
 			$table->string('name')->unique();
-			$table->integer('added_by')->unsigned();
-			$table->foreign('added_by')->references('id')->on('users');
+			// $table->integer('added_by')->unsigned();
+			// $table->foreign('added_by')->references('id')->on('users');
 			$table->timestamps();
 		});
 	}

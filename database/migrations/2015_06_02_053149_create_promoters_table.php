@@ -18,10 +18,10 @@ class CreatePromotersTable extends Migration {
 			$table->string('name')->unique();
 			$table->string('city');
 			$table->string('website');
-			/*$table->integer('user_id')->unsigned();
-			$table->foreign('user_id')->references('id')->on('users');
-			$table->integer('added_by')->unsigned();
-			$table->foreign('added_by')->references('id')->on('users');*/
+			// $table->integer('user_id')->unsigned();
+			// $table->foreign('user_id')->references('id')->on('users');
+			// $table->integer('added_by')->unsigned();
+			// $table->foreign('added_by')->references('id')->on('users');
 			$table->timestamps();
 		});
 	}

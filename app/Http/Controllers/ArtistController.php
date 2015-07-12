@@ -5,6 +5,9 @@ use App\Http\Controllers\Controller;
 
 use Illuminate\Http\Request;
 
+use Auth;
+use App\Artist;
+
 class ArtistController extends Controller {
 
 	/**
@@ -14,7 +17,9 @@ class ArtistController extends Controller {
 	 */
 	public function index()
 	{
-		//
+		$artists = Artist::all();
+
+		return view('artists.index', compact('artists'));
 	}
 
 	/**
@@ -24,61 +29,85 @@ class ArtistController extends Controller {
 	 */
 	public function create()
 	{
-		//
+		return view('artists.create');
 	}
 
 	/**
 	 * Store a newly created resource in storage.
 	 *
+	 * @param Request $request
 	 * @return Response
 	 */
-	public function store()
+	public function store(Request $request)
 	{
-		//
+		Artist::create($request->all());
+
+		return redirect('artists');
 	}
 
 	/**
 	 * Display the specified resource.
 	 *
-	 * @param  int  $id
+	 * @param  Artist $artist
 	 * @return Response
 	 */
-	public function show($id)
+	public function show(Artist $artist)
 	{
-		//
+		return view('artists.show', compact('artist'));
 	}
 
 	/**
 	 * Show the form for editing the specified resource.
 	 *
-	 * @param  int  $id
+	 * @param  Artist $artist
 	 * @return Response
 	 */
-	public function edit($id)
+	public function edit(Artist $artist)
 	{
-		//
+		return view('artists.edit', compact('artist'));
 	}
 
 	/**
 	 * Update the specified resource in storage.
 	 *
-	 * @param  int  $id
+	 * @param  Artist $artist
+	 * @param  Request $request
 	 * @return Response
 	 */
-	public function update($id)
+	public function update(Artist $artist, Request $request)
 	{
-		//
+		$artist->name = $request->name;
+		
+		$artist->city = $request->city;
+		
+		$artist->website = $request->website;
+
+		$artist->soundcloud = $request->soundcloud;
+
+		$artist->mixcloud = $request->mixcloud;
+
+		$artist->bandcamp = $request->bandcamp;
+
+		$artist->facebook = $request->facebook;
+
+		$artist->twitter = $request->twitter;
+
+		$artist->save();
+
+		return redirect('artists');
 	}
 
 	/**
 	 * Remove the specified resource from storage.
 	 *
-	 * @param  int  $id
+	 * @param  Artist $artist
 	 * @return Response
 	 */
-	public function destroy($id)
+	public function destroy(Artist $artist)
 	{
-		//
+		$artist->delete();
+
+		return redirect('artists');
 	}
 
 }
