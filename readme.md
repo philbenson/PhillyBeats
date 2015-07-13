@@ -1,3 +1,3 @@
 ## Philly Beats (working title)
 
-An app in progress for documenting and organizing upcoming concerts and the artists and other entities affiliated.
+A web application for aggregating and organizing upcoming events and the entities associated.
