@@ -34,6 +34,6 @@ class Event extends Model {
 
     public function venue()
     {
-        return $this->hasOne('App\Venue')
+        return $this->hasOne('App\Venue');
     }
 }

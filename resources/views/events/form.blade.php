@@ -6,8 +6,8 @@
     </div>
     
     <div class="form-group">
-        {!! Form::label('venue', 'Venue') !!}
-        {!! Form::text('venue', null, ['class' => 'form-control']) !!}
+        {!! Form::label('venue_id', 'Venue') !!}
+        {!! Form::input('number', 'venue_id', null, ['class' => 'form-control']) !!}
     </div>
     
     <div class="form-group">
@@ -16,28 +16,23 @@
     </div>
     
     <div class="form-group">
-        {!! Form::label('startDate', 'Start Date') !!}
-        {!! Form::text('startDate', null, ['class' => 'form-control']) !!}
+        {!! Form::label('date', 'Date') !!}
+        {!! Form::text('date', null, ['class' => 'form-control']) !!}
     </div>
     
     <div class="form-group">
-        {!! Form::label('endDate', 'End Date') !!}
-        {!! Form::text('endDate', null, ['class' => 'form-control']) !!}
+        {!! Form::label('door_time', 'Door Time') !!}
+        {!! Form::text('door_time', null, ['class' => 'form-control']) !!}
     </div>
     
     <div class="form-group">
-        {!! Form::label('doorTime', 'Door Time') !!}
-        {!! Form::text('doorTime', null, ['class' => 'form-control']) !!}
+        {!! Form::label('show_time', 'Show Time') !!}
+        {!! Form::text('show_time', null, ['class' => 'form-control']) !!}
     </div>
     
     <div class="form-group">
-        {!! Form::label('showTime', 'Show Time') !!}
-        {!! Form::text('showTime', null, ['class' => 'form-control']) !!}
-    </div>
-    
-    <div class="form-group">
-        {!! Form::label('endTime', 'End Time') !!}
-        {!! Form::text('endTime', null, ['class' => 'form-control']) !!}
+        {!! Form::label('end_time', 'End Time') !!}
+        {!! Form::text('end_time', null, ['class' => 'form-control']) !!}
     </div>
     
     <div class="form-group">
