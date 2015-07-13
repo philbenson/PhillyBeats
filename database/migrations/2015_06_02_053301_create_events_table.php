@@ -16,10 +16,9 @@ class CreateEventsTable extends Migration {
 		{
 			$table->increments('id');
 			$table->string('name');
-			$table->string('venue');
-			$table->string('address');
-			$table->string('start_date');
-			$table->string('end_date');
+			$table->integer('venue_id')->unsigned();
+			$table->foreign('venue_id')->references('id')->on('venues');
+			$table->string('date');
 			$table->string('door_time');
 			$table->string('show_time');
 			$table->string('end_time');

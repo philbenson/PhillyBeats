@@ -6,10 +6,8 @@ class Event extends Model {
 
     protected $fillable = [
         'name',
-        'venue',
-        'address',
-        'start_date',
-        'end_date',
+        'venue_id',
+        'date',
         'door_time',
         'show_time',
         'end_time',
@@ -24,8 +22,18 @@ class Event extends Model {
         return $this->belongsToMany('App\Artist');
     }
 
+    public function genres()
+    {
+        return $this->hasManyThrough('App\Genre', 'App\Artist');
+    }
+
     public function promoters()
     {
         return $this->belongsToMany('App\Promoter');
+    }
+
+    public function venue()
+    {
+        return $this->hasOne('App\Venue')
     }
 }
